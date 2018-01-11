@@ -1,9 +1,11 @@
 <template>
   <div id="app">
     <header>
-      <img width="280" src="./assets/logo.png">
-      <h1>Welcome to Your Dreamest Festival</h1>
-      <h4>Write down the names of your preffered bands and create your own festival!</h4>
+      <img width="300" src="./assets/logo.png" align="left">
+      <div class="header-text">
+        <h1>Welcome to Your Dreamest Festival</h1>
+        <h4>Write down the names of your preffered bands and create your own festival!</h4>
+      </div>
     </header>
     <div>
       <BandField :categorie="categories[0]" />
@@ -56,7 +58,13 @@ a {
 header {
   min-height: 350px;
   padding: 50px;
-  img { display: inline-block; }
+  border-bottom: 1px solid;
+  text-align: left;
+  display: inline-block;
+  .header-text, img {
+    display: table-cell;
+    padding: 1rem;
+  }
 }
 
 </style>
