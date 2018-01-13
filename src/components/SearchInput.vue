@@ -1,5 +1,5 @@
 <template>
-    <v-autocomplete v-model="band" :items="bands" :get-label="getLabel" 
+    <v-autocomplete v-model="band" :items="bands" :get-label="getLabel" :input-attrs="{ placeholder: 'Write here...' }"
     :component-item="template" @update-items="fetchBands" @item-selected="addBand">
     </v-autocomplete>
 </template>
@@ -54,7 +54,6 @@ export default {
         }
         &.v-autocomplete-selected {
             .v-autocomplete-input {
-                color: green;
                 background-color: #f2fff2;
             }
         }
