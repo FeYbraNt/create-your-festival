@@ -51,6 +51,7 @@ export default {
             border: 1px solid #157977;
             outline: none;
             background-color: #eee;
+            margin-bottom: 0; padding-bottom: 0;
         }
         &.v-autocomplete-selected {
             .v-autocomplete-input {
@@ -61,8 +62,6 @@ export default {
     .v-autocomplete-list {
         text-align: left;
         width: 100%;
-        border: none;
-        border-top: none;
         overflow-y: auto;
         border-bottom: 1px solid #157977;
         .v-autocomplete-list-item {
