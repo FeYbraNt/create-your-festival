@@ -1,16 +1,13 @@
 <template>
   <div id="app">
     <header>
-      <img width="300" src="./assets/logo.png" align="left">
-      <div class="header-text">
-        <h1>Welcome to Your Dreamest Festival</h1>
-        <h4>Write down the names of your preffered bands and create your own festival!</h4>
-      </div>
+      <h2>Welcome to Your Dreamest Festival</h2>
+      <p>Write down the names of your preffered bands and create your own festival!</p>
     </header>
-    <div>
-      <BandField :categorie="categories[0]" />
-      <BandField :categorie="categories[1]" />
-      <BandField :categorie="categories[2]" />
+    <div class="band-list">
+      <BandField v-for="category in categories" :key="category">
+        <h2 v-bind:style="{ color: category.color }">{{ category.name }}</h2>
+      </BandField>
     </div>
   </div>
 </template>
@@ -22,19 +19,27 @@ export default {
   components: { BandField },
   data() {
     return {
-      categories: ['Main artist', 'Second artist', 'Third artist']
+      categories: [ 
+        { name: 'Main artist', color: '#fbac39' }, 
+        { name: 'Second artist', color: '#fff' }, 
+        { name: 'Third artist', color: '#fff' } 
+      ]
     }
   }
 }
 </script>
 
 <style lang="scss">
+body {
+  background: url(./assets/bg.jpg) top center;
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'MuseoSansCond-900','Helvetica Neue', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #FFF;
 }
 
 h1, h2 {
@@ -52,19 +57,18 @@ li {
 }
 
 a {
-  color: #42b983;
+  color: #fbac39;
 }
 
 header {
-  min-height: 350px;
-  padding: 50px;
-  border-bottom: 1px solid;
-  text-align: left;
-  display: inline-block;
-  .header-text, img {
-    display: table-cell;
-    padding: 1rem;
-  }
+  width: 100%;
+  background: #17181b url(./assets/logo.png) no-repeat top right;
+  border-bottom: 1px solid #AAA;
+  display: block;
+  p { position: relative; color: #fbac39; }
 }
 
+.band-list {
+  display: block;
+}
 </style>

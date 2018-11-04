@@ -28,6 +28,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card-image img { border: 1px solid #e6e6e6; }
+.band-item { 
+    background-color: transparent; border: 0;
+    color: #FFF; position: relative; width: 100%;
+    img { border: 1px solid #e6e6e6; }
+}
 li { display: block; }
 </style>

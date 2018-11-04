@@ -48,34 +48,36 @@ export default {
     .v-autocomplete-input-group {
         .v-autocomplete-input {
             box-shadow: none;
-            border: 1px solid #157977;
-            outline: none;
-            background-color: #eee;
+            border: 2px solid rgba(251,170,52,0.8);
+            text-transform: uppercase;
+            outline: none; color: #deddd9; 
+            background-color: transparent;
             margin-bottom: 0; padding-bottom: 0;
+            &:hover { background-color: #000; }
         }
         &.v-autocomplete-selected {
             .v-autocomplete-input {
-                background-color: #f2fff2;
+                border: 2px solid #bd7104;
             }
         }
     }
     .v-autocomplete-list {
         text-align: left;
         width: 100%;
-        overflow-y: auto;
-        border-bottom: 1px solid #157977;
+        overflow-y: auto; z-index: 2;
+        border-bottom: 1px solid #bd7104;
         .v-autocomplete-list-item {
-            cursor: pointer;
-            padding: 10px;
-            background-color: #fff;
-            border-bottom: 1px solid #157977;
-            border-left: 1px solid #157977;
-            border-right: 1px solid #157977;
+            cursor: pointer; padding: 10px;
+            background-color: #000 !important;
+            border-bottom: 1px solid #bd7104;
+            border-left: 1px solid #bd7104;
+            border-right: 1px solid #bd7104;
+            color: #deddd9;
             &:last-child {
                 border-bottom: none;
             }
             &:hover {
-                background-color: #eee;
+                background-color: #a96603;
             }
         }
     }

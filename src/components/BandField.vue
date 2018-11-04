@@ -1,6 +1,6 @@
 <template>
     <div class="band-field">
-        <h2>{{ categorie }}</h2>
+        <slot></slot>
         <SearchInput @item-selected="addBand" />
         <Band :key="band.id" :id="band.id" :thumb="image" :artist="band" />
     </div>
@@ -17,7 +17,7 @@ const api = {
 
 export default {
     props: {
-        categorie: String
+        category: String
     },
     components: { SearchInput, Band },
     data() {
@@ -40,12 +40,14 @@ export default {
 
 <style lang="scss">
 .band-field {
+    background-color: rgba(0, 0, 0, 0.6);
     width: 300px;
     margin: 1rem;
     padding: 1rem;
-    border: 1px solid #2c3e50;
-    display: inline-table;
-    min-height: 350px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: inline-block;
+    min-height: 150px;
 }
 </style>
 
